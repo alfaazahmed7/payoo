@@ -18,3 +18,19 @@ function setBalance(value) {
     balanceElement.innerText = value;
     // 45000 = 50000
 }
+
+// machine id - hide add > show id
+function showOnly(id) {
+    const addMoney = document.getElementById("add-money");
+    const cashout = document.getElementById("cashout");
+    const history = document.getElementById("history");
+
+    // hide everyone
+    addMoney.classList.add("hidden");
+    cashout.classList.add("hidden");
+    history.classList.add("hidden");
+
+    // show the id elelment
+    const selected = document.getElementById(id);
+    selected.classList.remove("hidden");
+};

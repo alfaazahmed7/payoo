@@ -25,6 +25,22 @@ document.getElementById("add-money-btn")
         if (pin === "1234") {
             alert(`Add money successful from ${bankAccount} at ${new Date()}`);
             setBalance(newBalance);
+
+            // get the history-container
+            const history = document.getElementById("history-container");
+
+            // create a new div
+            const newHistory = document.createElement("div");
+
+            // add innerHTML  to the new div
+            newHistory.innerHTML = `
+            <div class = "transaction-card p-5 bg-base-100">
+                Add Money Successful from ${bankAccount} bank, account number ${accountNumber} at ${new Date}
+            </div>
+            `;
+
+            // append newDiv to the histroy container
+            history.append(newHistory);
         }
         else {
             alert("Invalid pin");

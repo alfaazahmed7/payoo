@@ -29,6 +29,8 @@
     </style>
 </head>
 
+<!-- payoo login header -->
+
 <body class="min-h-screen max-w-md bg-base-200 mx-auto">
     <header class="border-b-2 border-gray-300 sticky top-0 bg-base-200 z-10">
         <section class="w-11/12 mx-auto flex justify-between items-center py-[10px]">
@@ -48,16 +50,18 @@
         </section>
     </header>
 
+    <!-- welcome to payoo section -->
+
     <section class="w-11/12 mx-auto pt-8 ">
         <h2 class="pb-3 text-2xl font-bold leading-7 ">Welcome to Pay<span class="text-[#7460FF]">oo</span></h2>
         <p class="opacity-50 pb-6">Enjoy easy and convenient financial services with us. Cashout charge is low.</p>
 
         <div class="buttons grid grid-cols-3 gap-3">
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('add-money')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-1.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Add Money</p>
             </button>
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('cashout')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-2.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Cashout</p>
             </button>
@@ -73,14 +77,16 @@
                 <img src="assets/opt-5.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Pay Bill</p>
             </button>
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('history')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-6.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Transactions</p>
             </button>
         </div>
     </section>
 
-    <section class="cashout w-11/12 mx-auto mt-5 hidden">
+    <!-- cashout form -->
+
+    <section id="cashout" class="w-11/12 mx-auto mt-5 hidden">
         <h2 class="text-lg font-semibold mb-4 px-6">Cash Out</h2>
 
         <div class="form">
@@ -107,7 +113,9 @@
         </div>
     </section>
 
-    <section class="cashout w-11/12 mx-auto mt-5">
+    <!-- add money form -->
+
+    <section id="add-money" class="w-11/12 mx-auto mt-5">
         <h2 class="text-lg font-semibold mb-4 px-6">Add Money</h2>
 
         <div class="form">
@@ -123,7 +131,8 @@
                         </select>
                         <label class="label text-base text-neutral font-medium ">Bank Account Number</label>
                         <input id="add-money-number" type="text"
-                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full" placeholder="Enter 11 digit account number" />
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter 11 digit account number" />
                         <label class="label text-neutral text-base font-medium ">Amount to Add</label>
                         <input id="add-money-amount" type="text"
                             class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
@@ -136,6 +145,15 @@
                     </fieldset>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- transaction form -->
+
+    <section id="history" class="w-11/12 mx-auto mt-5 hidden">
+        <h2 class="text-lg font-semibold mb-4 px-6">Transactions</h2>
+        <div id="history-container" class="">
+            <div class="transaction-card"></div>
         </div>
     </section>
 
