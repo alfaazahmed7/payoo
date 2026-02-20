@@ -69,11 +69,11 @@
                 <img src="assets/opt-3.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Transfer Money</p>
             </button>
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('get-bonus')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-4.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Get Bonus</p>
             </button>
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('pay-bill')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-5.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Pay Bill</p>
             </button>
@@ -81,35 +81,6 @@
                 <img src="assets/opt-6.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Transactions</p>
             </button>
-        </div>
-    </section>
-
-    <!-- cashout form -->
-
-    <section id="cashout" class="w-11/12 mx-auto mt-5 hidden">
-        <h2 class="text-lg font-semibold mb-4 px-6">Cash Out</h2>
-
-        <div class="form">
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
-                <div class="card-body">
-                    <fieldset class="fieldset">
-                        <label class="label text-base text-neutral font-medium ">Agent Number</label>
-                        <input id="cashout-number" minlength="11" maxlength="11" type="text"
-                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
-                            placeholder="Enter 11 digit number" />
-                        <label class="label text-neutral text-base font-medium ">Amount</label>
-                        <input id="cashout-amount" type="text"
-                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
-                            placeholder="Enter amount to withdraw" />
-                        <label class="label text-neutral text-base font-medium">Pin Number</label>
-                        <input id="cashout-pin" type="password"
-                            class="input rounded-full bg-[#F4F5F7] border-none w-full"
-                            placeholder="Enter 4 digit pin number" />
-                        <button id="cashout-btn" class="btn btn-primary rounded-full mt-4 w-full">Withdraw
-                            Money</button>
-                    </fieldset>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -148,6 +119,55 @@
         </div>
     </section>
 
+    <!-- cashout form -->
+
+    <section id="cashout" class="w-11/12 mx-auto mt-5 hidden">
+        <h2 class="text-lg font-semibold mb-4 px-6">Cash Out</h2>
+
+        <div class="form">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-base text-neutral font-medium ">Agent Number</label>
+                        <input id="cashout-number" minlength="11" maxlength="11" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter 11 digit number" />
+                        <label class="label text-neutral text-base font-medium ">Amount</label>
+                        <input id="cashout-amount" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter amount to withdraw" />
+                        <label class="label text-neutral text-base font-medium">Pin Number</label>
+                        <input id="cashout-pin" type="password"
+                            class="input rounded-full bg-[#F4F5F7] border-none w-full"
+                            placeholder="Enter 4 digit pin number" />
+                        <button id="cashout-btn" class="btn btn-primary rounded-full mt-4 w-full">Withdraw
+                            Money</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- get bonus form -->
+
+    <section id="get-bonus" class="w-11/12 mx-auto mt-5 hidden">
+        <h2 class="text-lg font-semibold mb-4 px-6">Get Bonus</h2>
+
+        <div class="form">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-base text-neutral font-medium ">Enter Bonus Coupon</label>
+                        <input id="bonus-coupon" type="text" class="input rounded-full bg-[#F4F5F7] border-none w-full"
+                            placeholder="Enter your coupon" />
+                        <button id="bonus-coupon-btn" class="btn btn-primary rounded-full mt-2 w-full">Get
+                            Bonus</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- transfer money form -->
 
     <section id="transfer-money" class="w-11/12 mx-auto mt-5 hidden">
@@ -176,6 +196,41 @@
         </div>
     </section>
 
+    <!-- pay bill form -->
+
+    <section id="pay-bill" class="w-11/12 mx-auto mt-5">
+        <h2 class="text-lg font-semibold mb-4 px-6">Pay Bill</h2>
+
+        <div class="form">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-base text-neutral font-medium ">Select To Pay</label>
+                        <select id="pay-bill-bank" class="select w-full rounded-full bg-[#F4F5F7] border-none mb-4">
+                            <option disabled selected>Select Pay Bill</option>
+                            <option value="DBBL">Electric Bill</option>
+                            <option value="IBBL">Wifi Bill</option>
+                            <option value="CITY">Internet Bill</option>
+                        </select>
+                        <label class="label text-base text-neutral font-medium ">Bill Account Number</label>
+                        <input id="pay-bill-number" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter account number" />
+                        <label class="label text-neutral text-base font-medium ">Amount to Pay</label>
+                        <input id="pay-bill-amount" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Add Amount to pay"/>
+                        <label class="label text-neutral text-base font-medium">Pin Number</label>
+                        <input id="pay-bill-pin" type="password"
+                            class="input rounded-full bg-[#F4F5F7] border-none w-full"
+                            placeholder="Enter 4 digit pin number" />
+                        <button id="pay-bill-btn" class="btn btn-primary rounded-full mt-4 w-full">Pay Now</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- transaction form -->
 
     <section id="history" class="w-11/12 mx-auto mt-5 hidden">
@@ -189,6 +244,8 @@
     <script src="script/addMoney.js"></script>
     <script src="script/cashout.js"></script>
     <script src="script/tMoney.js"></script>
+    <script src="script/coupon.js"></script>
+    <script src="script/payBill.js"></script>
 </body>
 
 </html>
