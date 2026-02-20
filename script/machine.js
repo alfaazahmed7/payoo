@@ -24,11 +24,13 @@ function showOnly(id) {
     const addMoney = document.getElementById("add-money");
     const cashout = document.getElementById("cashout");
     const history = document.getElementById("history");
+    const tMoney = document.getElementById("transfer-money");
 
     // hide everyone
     addMoney.classList.add("hidden");
     cashout.classList.add("hidden");
     history.classList.add("hidden");
+    tMoney.classList.add("hidden");
 
     // show the id elelment
     const selected = document.getElementById(id);

@@ -65,7 +65,7 @@
                 <img src="assets/opt-2.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Cashout</p>
             </button>
-            <button class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
+            <button onclick="showOnly('transfer-money')" class="btn flex flex-col h-full py-5 px-3 bg-white rounded-xl">
                 <img src="assets/opt-3.png" alt="">
                 <p class="text-[14px] opacity-70 font-normal">Transfer Money</p>
             </button>
@@ -115,7 +115,7 @@
 
     <!-- add money form -->
 
-    <section id="add-money" class="w-11/12 mx-auto mt-5">
+    <section id="add-money" class="w-11/12 mx-auto mt-5 hidden">
         <h2 class="text-lg font-semibold mb-4 px-6">Add Money</h2>
 
         <div class="form">
@@ -148,10 +148,38 @@
         </div>
     </section>
 
+    <!-- transfer money form -->
+
+    <section id="transfer-money" class="w-11/12 mx-auto mt-5 hidden">
+        <h2 class="text-lg font-semibold mb-4 px-6">Transfer Money</h2>
+
+        <div class="form">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-base text-neutral font-medium ">User Account Number</label>
+                        <input id="t-money-number" minlength="11" maxlength="11" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter 11 digit number" />
+                        <label class="label text-neutral text-base font-medium ">Amount</label>
+                        <input id="t-money-amount" type="text"
+                            class="input rounded-full bg-[#F4F5F7] mb-4 border-none w-full"
+                            placeholder="Enter amount to transfer" />
+                        <label class="label text-neutral text-base font-medium">Pin Number</label>
+                        <input id="t-money-pin" type="password"
+                            class="input rounded-full bg-[#F4F5F7] border-none w-full"
+                            placeholder="Enter 4 digit pin number" />
+                        <button id="t-money-btn" class="btn btn-primary rounded-full mt-4 w-full">Send Now</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- transaction form -->
 
     <section id="history" class="w-11/12 mx-auto mt-5 hidden">
-        <h2 class="text-lg font-semibold mb-4 px-6">Transactions</h2>
+        <h2 class="text-lg font-semibold mb-4 ">Transactions</h2>
         <div id="history-container" class="">
             <div class="transaction-card"></div>
         </div>
@@ -160,6 +188,7 @@
     <script src="script/machine.js"></script>
     <script src="script/addMoney.js"></script>
     <script src="script/cashout.js"></script>
+    <script src="script/tMoney.js"></script>
 </body>
 
 </html>

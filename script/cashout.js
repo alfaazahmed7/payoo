@@ -23,7 +23,7 @@ document.getElementById("cashout-btn")
         // get the pin and verify
         const pin = getValueFromInput("cashout-pin");
         if (pin === "1234") {
-            alert("Cashout Successful");
+            alert(`${cashoutAmount} taka successful cahsout to ${cashoutNumber} at ${new Date}`);
             setBalance(newBalance);
 
             // get the history-container
@@ -34,8 +34,9 @@ document.getElementById("cashout-btn")
 
             // add innerHTML  to the new div
             newHistory.innerHTML = `
-            <div class = "transaction-card p-5 bg-base-100">
-                Cashout ${cashoutAmount} taka uccessful to ${cashoutNumber} at ${new Date}
+            <div class = "transaction-card p-5 bg-white mb-2 rounded-lg">
+                <h6 class = "text-base font-bold mb-1">Cashout</h6>
+                <p class = "text-[#080808] opacity-50">${cashoutAmount} taka successful cahsout to ${cashoutNumber} at ${new Date}</p>
             </div>
             `;
 

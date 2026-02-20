@@ -34,8 +34,9 @@ document.getElementById("add-money-btn")
 
             // add innerHTML  to the new div
             newHistory.innerHTML = `
-            <div class = "transaction-card p-5 bg-base-100">
-                Add Money Successful from ${bankAccount} bank, account number ${accountNumber} at ${new Date}
+            <div class = "transaction-card p-5 bg-white mb-2 rounded-lg">
+                <h6 class = "text-base font-bold mb-1">Add Money</h6>
+                <p class = "text-[#080808] opacity-50">Add Money Successful from ${bankAccount} bank, account number ${accountNumber} at ${new Date}</p>
             </div>
             `;
 
